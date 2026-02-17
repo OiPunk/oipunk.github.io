@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Java Memory Model (JMM)</title><meta name="description" content="Java Backend Engineer specializing in Spring Boot, distributed systems, and microservices. Explore my projects, technical blog, and expertise."><meta name="keywords" content="Java, Spring Boot, Backend Developer, Microservices, Distributed Systems, MySQL, Redis, Docker, Kubernetes"><meta name="author" content="Weiguang Li"><meta name="robots" content="index, follow"><link rel="canonical" href="https://oipunk.github.io"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:url" content="https://oipunk.github.io"><meta property="og:title" content="Java Memory Model (JMM)"><meta property="og:description" content="Java Backend Engineer specializing in Spring Boot, distributed systems, and microservices. Explore my projects, technical blog, and expertise."><meta property="og:image" content="https://oipunk.github.io/img/og-image.jpg"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Java Memory Model (JMM)"><meta name="twitter:description" content="Java Backend Engineer specializing in Spring Boot, distributed systems, and microservices. Explore my projects, technical blog, and expertise."><meta name="twitter:image" content="https://oipunk.github.io/img/og-image.jpg"><link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"><link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"><!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-DNX03VZHBX"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DNX03VZHBX');
+    </script><link rel="stylesheet" href="/_astro/about.Bxf0nmK-.css"></head> <body class="bg-gray-950 text-gray-100 font-sans"> <header class="sticky top-0 z-50 bg-gray-950/95 backdrop-blur-sm border-b border-gray-800" x-data="{ open: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 50"> <nav class="max-w-6xl mx-auto px-6 lg:px-12 py-6 flex items-center justify-between"> <a href="/" class="flex items-center gap-2 "> <i class="fas fa-code text-green-400 text-2xl led-glow"></i> <span class="text-xl font-bold font-code text-white">Weiguang Li</span> </a> <div class="hidden md:flex items-center gap-10 main-nav"> <a href="/about" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  ">  About </a><a href="/projects" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  ">  Projects </a><a href="/services" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  ">  Expertise </a><a href="/blog" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  ">  Blog </a><a href="/contact" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  ">  Contact </a> </div> <div class="md:hidden"> <button @click="open = !open" class="text-gray-300 hover:text-green-400 transition-colors"> <i x-show="!open" style="display: none;" class="fas fa-bars text-2xl"></i> <i x-show="open" class="fas fa-times text-2xl"></i> </button> <div x-show="open" style="display: none;" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="absolute top-full left-0 right-0 bg-gray-950 border-b border-gray-800 p-6 flex flex-col gap-4 shadow-lg"> <a href="/about" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  " x-on:click="open = false">  About </a><a href="/projects" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  " x-on:click="open = false">  Projects </a><a href="/services" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  " x-on:click="open = false">  Expertise </a><a href="/blog" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  " x-on:click="open = false">  Blog </a><a href="/contact" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  " x-on:click="open = false">  Contact </a> </div> </div> </nav> </header> <main id="main" class="relative bg-gray-900/50 overflow-hidden">  <section class="py-12 max-w-6xl mx-auto px-6 lg:px-12 relative z-10"> <div class="mb-8"> <h1 class="text-3xl lg:text-4xl font-bold font-code text-white mb-2"> <span class="text-white ">Java Memory </span><span class="text-green-500 ">Model (JMM)</span> </h1> <div class="flex items-center gap-4 text-gray-400"> <i class="fas fa-calendar-alt"></i> <span>May 13, 2020</span> <span>|</span> <span>29 min read</span> </div> </div> <div class="py-8 px-6 bg-gray-950 rounded-lg border border-gray-800 mb-8"> <div class="relative mb-8"> <img src="/img/blog3.jpg" alt="Java Memory Model (JMM)" class="w-full object-cover rounded-lg border border-gray-800"> </div> <div class="post-content text-gray-300 space-y-8"><p><img src="/images/blog/image-20200406103106651.png" alt="illustration" class="my-4" /></p><p>离CPU越近, 速度越快, 空间越小</p><p><img src="/images/blog/image-20200406103208497.png" alt="illustration" class="my-4" /></p><p>数据不一致问题</p><p><img src="/images/blog/image-20200406103255933.png" alt="illustration" class="my-4" /> <img src="/images/blog/image-20200406103528554.png" alt="illustration" class="my-4" /></p><p>缓存锁</p><p><img src="/images/blog/image-20200406103638477.png" alt="illustration" class="my-4" /></p><p>和主存内容比较  
+Modified改过, 再加载 Exclusive独享 Shared我读的时候别人也在读 Invalid读时被别的CPU改过</p><p>现代CPU的数据一致性实现 = 缓存锁(MESI …) + 总线锁读取缓存以cache line为基本单位-目前64bytes</p><p>位于同一缓存行的两个不同数据-被两个不同CPU锁定-产生互相影响的伪共享问题</p><p>伪共享问题：JUC/c_028_FalseSharing</p><p>使用缓存行的对齐能够提高效率</p><p><img src="/images/blog/image-20200406105854481.png" alt="illustration" class="my-4" /></p><p>乱序问题</p><p><img src="/images/blog/image-20200406105951702.png" alt="illustration" class="my-4" /></p><p>CPU为了提高指令执行效率-会在一条指令执行过程中（比如去内存读数据（慢100倍））-去同时执行另一条指令-前提是-两条指令没有依赖关系</p><p>写操作也可以进行合并</p><p>乱序执行的证明：JVM/jmm/Disorder.java</p><p><h2>如何保证特定情况下不乱序</h2></p><p>硬件内存屏障 X86</p><p>> sfence: store| 在sfence指令前的写操作当必须在sfence指令后的写操作前完成。  
+> lfence：load | 在lfence指令前的读操作当必须在lfence指令后的读操作前完成。  
+> mfence：modify/mix | 在mfence指令前的读写操作当必须在mfence指令后的读写操作前完成。</p><p>> 原子指令-如x86上的”lock …” 指令是一个Full Barrier-执行时会锁住内存子系统来确保执行顺序-甚至跨多个CPU。Software Locks通常使用了内存屏障或原子指令来实现变量可见性和保持程序顺序</p><p>JVM级别如何规范（JSR133）</p><p>> LoadLoad屏障：  
+> 对于这样的语句Load1; LoadLoad; Load2-
+>
+> ``<code>
+> 在Load2及后续读取操作要读取的数据被访问前-保证Load1要读取的数据被读取完毕。
+> </code>`<code>
+>
+> StoreStore屏障：
+>
+> </code>`<code>
+> 对于这样的语句Store1; StoreStore; Store2-
+>
+> 在Store2及后续写入操作执行前-保证Store1的写入操作对其它处理器可见。
+> </code>`<code>
+>
+> LoadStore屏障：
+>
+> </code>`<code>
+> 对于这样的语句Load1; LoadStore; Store2-
+>
+> 在Store2及后续写入操作被刷出前-保证Load1要读取的数据被读取完毕。
+> </code>`<code>
+>
+> StoreLoad屏障：  
+> 对于这样的语句Store1; StoreLoad; Load2-
+>
+> ​ 在Load2及后续所有读取操作执行前-保证Store1的写入对所有处理器可见。</p><p>volatile的实现细节</p><p><li> 字节码层面  </li>
+    ACC_VOLATILE
+<li> JVM层面  </li>
+    volatile内存区的读写 都加屏障</p><p>    > StoreStoreBarrier
+    >
+    > volatile 写操作
+    >
+    > StoreLoadBarrier</p><p>    > LoadLoadBarrier
+    >
+    > volatile 读操作
+    >
+    > LoadStoreBarrier</p><p>    <img src="/images/blog/image-20200406133643178.png" alt="illustration" class="my-4" /></p><p><li> OS和硬件层面  </li>
+    <a href="https://blog.csdn.net/qq_26222859/article/details/52235930">https://blog.csdn.net/qq_26222859/article/details/52235930</a>  
+    hsdis - HotSpot Dis Assembler  
+    windows lock 指令实现 | MESI实现</p><p>synchronized实现细节</p><p><li> 字节码层面  </li>
+    ACC_SYNCHRONIZED  
+    monitorenter monitorexit
+<li> JVM层面  </li>
+    C C++ 调用了操作系统提供的同步机制
+<li> OS和硬件层面  </li>
+    X86 : lock cmpxchg / xxx  
+    <a href="https://blog.csdn.net/21aspnet/article/details/88571740">https</a><a href="https://blog.csdn.net/21aspnet/article/details/88571740">://blog.csdn.net/21aspnet/article/details/</a>[88571740</p><p><img src="/images/blog/image-20200406141008614.png" alt="illustration" class="my-4" /> <img src="/images/blog/image-20200406141654051.png" alt="illustration" class="my-4" /></p><p><h3>观察虚拟机配置</h3></p><p>java -XX:+PrintCommandLineFlags -version</p><p><h3>普通对象</h3></p><p><img src="/images/blog/NHM%5DW@6V4YDG05XD1M%5DB%60LR-1587785829438.png" alt="illustration" class="my-4" /></p><p><li> 对象头：markword 8</li>
+<li> ClassPointer指针：-XX:+UseCompressedClassPointers 为4字节 不开启为8字节</li>
+<li> 实例数据</li>
+    1.  引用类型：-XX:+UseCompressedOops 为4字节 不开启为8字节  
+        Oops Ordinary Object Pointers
+<li> Padding对齐-8的倍数</li></p><p><h3>数组对象</h3></p><p><li> 对象头：markword 8</li>
+<li> ClassPointer指针同上</li>
+<li> 数组长度：4字节</li>
+<li> 数组数据</li>
+<li> 对齐 8的倍数</li></p><p><img src="/images/blog/image-20200406143814461.png" alt="illustration" class="my-4" /></p><p><img src="/images/blog/image-20200423213522378.png" alt="illustration" class="my-4" /></p><p><img src="/images/blog/image-20200406144658888.png" alt="illustration" class="my-4" /></p><p><img src="/images/blog/image-20200406144920389.png" alt="illustration" class="my-4" /> <img src="/images/blog/image-20200406145146864.png" alt="illustration" class="my-4" /> <img src="/images/blog/image-20200406145223522.png" alt="illustration" class="my-4" /></p><p>Heap</p><p>Method Area</p><p><li> Perm Space (<1.8)  </li>
+    字符串常量位于PermSpace  
+    FGC不会清理  
+    大小启动的时候指定-不能变
+<li> Meta Space (>=1.8)  </li>
+    字符串常量位于堆  
+    会触发FGC清理  
+    不设定的话-最大就是物理内存</p><p>Runtime Constant Pool</p><p>Native Method Stack</p><p>Direct Memory</p><p>> JVM可以直接访问的内核空间的内存 (OS 管理的内存)
+>
+> NIO - 提高效率-实现zero copy</p><p>思考：</p><p>> 如何证明1.7字符串常量位于Perm-而1.8位于Heap？
+>
+> 提示：结合GC- 一直创建字符串常量-观察堆-和Metaspace</p><p>PC 程序计数器</p><p>> 存放指令位置
+>
+> 虚拟机的运行-类似于这样的循环：
+>
+> while( not end ) {
+>
+> ​ 取PC中的位置-找到对应位置的指令；
+>
+> ​ 执行该指令；
+>
+> ​ PC ++;
+>
+> }</p><p><img src="/images/blog/image-20200406145829843.png" alt="illustration" class="my-4" /> <img src="/images/blog/image-20200406145851489.png" alt="illustration" class="my-4" /> <img src="/images/blog/image-20200406145909</div> </div> <div class="p-6 bg-gray-950 rounded-lg border border-gray-800 mb-8"> <div class="flex flex-col sm:flex-row items-center gap-6"> <img src="/img/male2.jpg" alt="Weiguang Li" class="w-16 h-16 rounded-full object-cover"> <div> <h4 class="max-sm:text-center text-lg font-bold text-white mb-1">Weiguang Li</h4> <p class="text-gray-300 mb-3">Java Backend Engineer specializing in Spring Boot, distributed systems, and microservices. Passionate about clean code and continuous learning.</p> <div class="flex gap-4"> <a href="https://github.com/OiPunk" target="_blank" class="text-gray-300 hover:text-green-400 text-xl"> <i class="fab fa-github"></i> </a> <a href="https://linkedin.com/in/" target="_blank" class="text-gray-300 hover:text-green-400 text-xl"> <i class="fab fa-linkedin"></i> </a> <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-green-400 text-xl"> <i class="fab fa-twitter"></i> </a> </div> </div> </div> </div> <div class="relative"> <h3 class="text-xl font-bold font-code text-white mb-6 flex items-center gap-2"> <i class="fas fa-book text-green-400 led-glow"></i> Related Articles
+</h3> <div class="grid grid-cols-1 gap-6"> <a href="/blog/2020-06-23-gcjvm" class="bg-gray-950 rounded-lg border border-gray-800 flex flex-col md:flex-row gap-4 related-card overflow-hidden transition-transform"> <img src="/img/blog3.jpg" alt="GC Principles and JVM Tuning" class="w-full md:w-1/4 object-cover"> <div class="p-6 flex-1"> <h4 class="text-lg font-bold font-code text-white mb-1">GC Principles and JVM Tuning</h4> <p class="text-gray-300 text-sm">Master garbage collection algorithms and JVM performance tuning including heap sizing, GC selection, and monitoring techniques.</p> <div class="flex items-center gap-2 text-gray-400 text-sm mt-2"> <i class="fas fa-calendar-alt"></i> <span>June 23, 2020</span> </div> </div> </a> </div> </div> </section>  </main> <footer class="bg-dark py-16 relative overflow-hidden"> <div class="absolute inset-0 bg-hero opacity-[.03]"></div> <div class="max-w-6xl mx-auto px-6 lg:px-12 relative"> <div class="grid grid-cols-1 md:grid-cols-4 gap-12"> <div class="md:col-span-2 flex flex-col items-center md:items-start"> <a href="/" class="flex items-center gap-2 mb-4"> <i class="fas fa-code text-green-400 text-2xl led-glow"></i> <span class="text-xl font-bold font-code text-white">Weiguang Li</span> </a> <p class="text-gray-400 text-left lg:pe-16"> Java Backend Engineer specializing in Spring Boot, distributed systems, and microservices. Passionate about open source and continuous learning. </p> <div class="flex gap-4 mt-4"> <a href="https://github.com/OiPunk" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-green-400 transition-colors"> <i class="fab fa-github text-2xl"></i> </a> </div> </div> <div class="flex flex-col"> <h3 class="text-lg font-bold font-code text-white mb-4"><i class="fas fa-link text-green-400"></i> Quick Links</h3> <ul class="space-y-3"> <li> <a href="/about" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  text-gray-400 hover:text-green-400"> <i class="fa fa-user"></i> About </a> </li><li> <a href="/projects" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  text-gray-400 hover:text-green-400"> <i class="fa fa-code"></i> Projects </a> </li><li> <a href="/services" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  text-gray-400 hover:text-green-400"> <i class="fa fa-cogs"></i> Expertise </a> </li><li> <a href="/blog" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  text-gray-400 hover:text-green-400"> <i class="fa fa-blog"></i> Blog </a> </li><li> <a href="/contact" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  text-gray-400 hover:text-green-400"> <i class="fa fa-envelope"></i> Contact </a> </li> </ul> </div> <!-- Newsletter --> <div> <h3 class="text-xl font-bold font-code text-white mb-6 flex items-center gap-2"> <i class="fas fa-envelope text-green-400"></i> Newsletter </h3> <p class="text-gray-300 mb-4">Subscribe for the latest tech articles and project updates.</p> <form class="space-y-3"> <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 focus:outline-none focus:border-green-400 transition-colors"> <button type="submit" class="w-full px-4 py-2 bg-green-500 text-gray-900 font-bold rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-2"> <i class="fas fa-paper-plane"></i> Subscribe </button> </form> </div> </div> <!-- Copyright --> <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4"> <p class="text-gray-300 text-sm">
+© 2026 Weiguang Li. Crafted with  <i class="fas fa-heart text-green-400"></i> and  <i class="fas fa-coffee text-green-400"></i>.
+</p> <div class="flex gap-6 text-gray-300 text-sm"> <a href="/privacy" class="hover:text-green-400 transition-colors">Privacy Policy</a><a href="/terms" class="hover:text-green-400 transition-colors">Terms of Service</a> </div> </div> </div> </footer> <button id="back-to-top" class="fixed bottom-6 end-6 bg-gray-800 border border-green-600 font-bold size-10 flex items-center justify-center rounded-full opacity-0 invisible transition-all duration-300 z-50" style="display: none;" title="Back to Top"> <svg class="size-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button> <script type="module" src="/_astro/Layout.astro_astro_type_script_index_0_lang.B7yG3BKd.js"></script> </body> </html>
