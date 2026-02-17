@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>RAG in Production: From Prototype to High-Trust AI</title><meta name="description" content="Java Backend Engineer specializing in Spring Boot, distributed systems, and microservices. Explore my projects, technical blog, and expertise."><meta name="keywords" content="Java, Spring Boot, Backend Developer, Microservices, Distributed Systems, MySQL, Redis, Docker, Kubernetes"><meta name="author" content="Weiguang Li"><meta name="robots" content="index, follow"><link rel="canonical" href="https://oipunk.github.io"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:url" content="https://oipunk.github.io"><meta property="og:title" content="RAG in Production: From Prototype to High-Trust AI"><meta property="og:description" content="Java Backend Engineer specializing in Spring Boot, distributed systems, and microservices. Explore my projects, technical blog, and expertise."><meta property="og:image" content="https://oipunk.github.io/img/og-image.jpg"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="RAG in Production: From Prototype to High-Trust AI"><meta name="twitter:description" content="Java Backend Engineer specializing in Spring Boot, distributed systems, and microservices. Explore my projects, technical blog, and expertise."><meta name="twitter:image" content="https://oipunk.github.io/img/og-image.jpg"><link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png"><link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"><!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-DNX03VZHBX"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DNX03VZHBX');
+    </script><link rel="stylesheet" href="/_astro/about.BWpmdKqS.css"></head> <body class="bg-gray-950 text-gray-100 font-sans"> <header class="sticky top-0 z-50 bg-gray-950/95 backdrop-blur-sm border-b border-gray-800" x-data="{ open: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 50"> <nav class="max-w-6xl mx-auto px-6 lg:px-12 py-6 flex items-center justify-between"> <a href="/" class="flex items-center gap-2 "> <i class="fas fa-code text-green-400 text-2xl led-glow"></i> <span class="text-xl font-bold font-code text-white">Weiguang Li</span> </a> <div class="hidden md:flex items-center gap-10 main-nav"> <a href="/about" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  ">  About </a><a href="/projects" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  ">  Projects </a><a href="/services" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  ">  Expertise </a><a href="/blog" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  ">  Blog </a><a href="/contact" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  ">  Contact </a> </div> <div class="md:hidden"> <button @click="open = !open" class="text-gray-300 hover:text-green-400 transition-colors"> <i x-show="!open" style="display: none;" class="fas fa-bars text-2xl"></i> <i x-show="open" class="fas fa-times text-2xl"></i> </button> <div x-show="open" style="display: none;" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="absolute top-full left-0 right-0 bg-gray-950 border-b border-gray-800 p-6 flex flex-col gap-4 shadow-lg"> <a href="/about" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  " x-on:click="open = false">  About </a><a href="/projects" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  " x-on:click="open = false">  Projects </a><a href="/services" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  " x-on:click="open = false">  Expertise </a><a href="/blog" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  " x-on:click="open = false">  Blog </a><a href="/contact" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  " x-on:click="open = false">  Contact </a> </div> </div> </nav> </header> <main id="main" class="relative bg-gray-900/50 overflow-hidden">  <section class="py-12 max-w-6xl mx-auto px-6 lg:px-12 relative z-10"> <div class="mb-8"> <h1 class="text-3xl lg:text-4xl font-bold font-code text-white mb-2"> <span class="text-white ">RAG in </span><span class="text-green-500 ">Production: From </span><span class="text-white ">Prototype to </span><span class="text-green-500 ">High-Trust AI</span> </h1> <div class="flex items-center gap-4 text-gray-400"> <i class="fas fa-calendar-alt"></i> <span>February 17, 2026</span> <span>|</span> <span>14 min read</span> </div> </div> <div class="py-8 px-6 bg-gray-950 rounded-lg border border-gray-800 mb-8"> <div class="relative mb-8"> <img src="/img/rag-cover.svg" alt="RAG in Production: From Prototype to High-Trust AI" class="w-full object-cover rounded-lg border border-gray-800"> </div> <div class="post-content text-gray-300 space-y-8">
+<h1>RAG in Production: From Prototype to High-Trust AI</h1>
+<p>Large language models are impressive, but raw generation alone is not enough for production systems. In business settings, users need answers that are current, source-grounded, and auditable. This is exactly where Retrieval-Augmented Generation (RAG) becomes a core architecture rather than an optional add-on.</p>
+<p>In this article, we will walk through RAG from first principles to production trade-offs. The goal is simple: keep the explanation accessible while giving enough engineering depth to ship confidently.</p>
+
+<figure>
+  <img src="/img/rag-cover.svg" alt="RAG architecture overview" class="my-4" />
+  <figcaption>RAG combines retrieval quality, prompt design, and evaluation discipline.</figcaption>
+</figure>
+
+<h2>1. Why RAG Exists</h2>
+<p>A standalone LLM has three common limitations in real-world products:</p>
+<ul>
+  <li><strong>Knowledge staleness</strong>: model parameters do not automatically include your latest internal docs.</li>
+  <li><strong>Hallucination risk</strong>: confident but unsupported statements can damage trust quickly.</li>
+  <li><strong>Weak traceability</strong>: teams cannot easily verify where an answer came from.</li>
+</ul>
+<p>RAG addresses these by injecting relevant external context at inference time. Instead of asking the model to guess, we ask it to reason over retrieved evidence.</p>
+
+<h2>2. Mental Model: RAG Is a Data System, Not Just a Prompt Trick</h2>
+<p>A common beginner mistake is to treat RAG as “vector search + one prompt template”. In production, RAG is better modeled as a data and feedback system with distinct stages:</p>
+<ol>
+  <li>Ingest and normalize source documents.</li>
+  <li>Chunk content into retrieval-friendly units.</li>
+  <li>Embed and index chunks for fast candidate recall.</li>
+  <li>Retrieve and rerank context for each query.</li>
+  <li>Generate an answer with citations and policy constraints.</li>
+  <li>Evaluate outcomes and feed failures back into the pipeline.</li>
+</ol>
+
+<figure>
+  <img src="/img/rag-pipeline.svg" alt="RAG pipeline lifecycle" class="my-4" />
+  <figcaption>A production RAG lifecycle from ingestion to measurable quality control.</figcaption>
+</figure>
+
+<h2>3. Chunking Strategy: The First Big Quality Lever</h2>
+<p>Most RAG quality issues start before retrieval, at chunking time. If chunks are too short, semantic meaning is fragmented. If chunks are too long, relevance ranking degrades and context windows are wasted.</p>
+<p>Practical guidance:</p>
+<ul>
+  <li>Use structure-aware splitting when possible (headings, sections, code blocks).</li>
+  <li>Use overlap conservatively to preserve continuity at boundaries.</li>
+  <li>Store rich metadata (source, timestamp, section title, permissions).</li>
+  <li>Preserve a canonical document link for every chunk.</li>
+</ul>
+<p>A robust default for knowledge-heavy text is to start with semantic chunks around a few hundred tokens, then tune using retrieval metrics rather than intuition.</p>
+
+<h2>4. Retrieval Design: Dense + Sparse + Reranking</h2>
+<p>Dense retrieval captures semantic similarity well, but lexical retrieval is still strong for exact terms, codes, and identifiers. In practice, hybrid retrieval often wins:</p>
+<ul>
+  <li><strong>Dense retrieval</strong> for concept-level matching.</li>
+  <li><strong>Sparse/BM25 retrieval</strong> for exact keyword precision.</li>
+  <li><strong>Reranker</strong> to reorder top candidates by cross-encoding relevance.</li>
+</ul>
+<p>This pattern improves both recall and final answer precision, especially in domains with mixed natural language and structured jargon.</p>
+
+<h3>Example retrieval flow</h3>
+<pre><code>query -> hybrid retrieve (k=40)
+      -> metadata/permission filter
+      -> rerank top 40 -> keep top 6
+      -> prompt assembly with source attributions</code></pre>
+
+<h2>5. Prompt Grounding: Make the Model Use Evidence, Not Improvise</h2>
+<p>Even with good retrieval, weak prompting can still produce unsupported answers. Your generation prompt should explicitly define behavior:</p>
+<ul>
+  <li>Answer only from provided context.</li>
+  <li>Cite sources per claim (or per paragraph).</li>
+  <li>Admit uncertainty when evidence is insufficient.</li>
+  <li>Prefer concise, faithful synthesis over speculation.</li>
+</ul>
+<p>For higher-stakes workflows, enforce citation checks in post-processing and reject unsupported outputs.</p>
+
+<h2>6. Evaluation: The Difference Between Demo and Product</h2>
+<p>RAG quality does not improve sustainably without an evaluation loop. Track both retrieval and generation metrics, and keep a curated benchmark set that reflects real user questions.</p>
+
+<figure>
+  <img src="/img/rag-eval-loop.svg" alt="RAG evaluation loop diagram" class="my-4" />
+  <figcaption>Measure, diagnose, and iterate. Reliability emerges from repeated evaluation cycles.</figcaption>
+</figure>
+
+<h3>Recommended metric categories</h3>
+<ul>
+  <li><strong>Retrieval metrics</strong>: Recall@k, MRR, context precision.</li>
+  <li><strong>Answer metrics</strong>: faithfulness, citation correctness, answer completeness.</li>
+  <li><strong>Operational metrics</strong>: p95 latency, cost per answer, timeout rate.</li>
+  <li><strong>Safety metrics</strong>: hallucination rate, policy violation rate.</li>
+</ul>
+
+<h2>7. Common Failure Modes and Fixes</h2>
+<h3>Failure 1: “The answer sounds right but cites the wrong source.”</h3>
+<p><strong>Fix:</strong> improve reranking, reduce noisy chunk length, enforce citation validation rules.</p>
+
+<h3>Failure 2: “The system misses obvious internal documents.”</h3>
+<p><strong>Fix:</strong> improve ingestion freshness, add sparse retrieval, verify metadata filters are not over-restrictive.</p>
+
+<h3>Failure 3: “Latency is too high at peak traffic.”</h3>
+<p><strong>Fix:</strong> reduce candidate set, cache embeddings and frequent retrieval results, apply two-stage retrieval efficiently.</p>
+
+<h3>Failure 4: “Quality drifts after document updates.”</h3>
+<p><strong>Fix:</strong> run incremental re-indexing, add freshness tests, and keep versioned evaluation snapshots.</p>
+
+<h2>8. A Practical Build Checklist</h2>
+<ul>
+  <li>Structured ingestion pipeline with document versioning.</li>
+  <li>Chunk + metadata policy that is testable and deterministic.</li>
+  <li>Hybrid retrieval with optional reranking.</li>
+  <li>Prompt policy for grounding, refusal, and citation format.</li>
+  <li>Offline benchmark + online telemetry dashboard.</li>
+  <li>Incident workflow for hallucination reports and root-cause analysis.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>RAG is not a silver bullet, but it is currently one of the most practical architectures for building trustworthy AI assistants on private or rapidly changing knowledge. The teams that succeed with RAG are not the ones with the fanciest model; they are the ones that treat retrieval quality, prompt constraints, and evaluation rigor as first-class engineering concerns.</p>
+<p>If you are starting today, begin simple, instrument everything, and iterate with evidence. That mindset scales much better than chasing one-shot prompt magic.</p>
+</div> </div> <div class="p-6 bg-gray-950 rounded-lg border border-gray-800 mb-8"> <div class="flex flex-col sm:flex-row items-center gap-6"> <img src="/img/male2.jpg" alt="Weiguang Li" class="w-16 h-16 rounded-full object-cover"> <div> <h4 class="max-sm:text-center text-lg font-bold text-white mb-1">Weiguang Li</h4> <p class="text-gray-300 mb-3">Java Backend Engineer specializing in Spring Boot, distributed systems, and microservices. Passionate about clean code and continuous learning.</p> <div class="flex gap-4"> <a href="https://github.com/OiPunk" target="_blank" class="text-gray-300 hover:text-green-400 text-xl"> <i class="fab fa-github"></i> </a> <a href="https://linkedin.com/in/" target="_blank" class="text-gray-300 hover:text-green-400 text-xl"> <i class="fab fa-linkedin"></i> </a> <a href="https://twitter.com/" target="_blank" class="text-gray-300 hover:text-green-400 text-xl"> <i class="fab fa-twitter"></i> </a> </div> </div> </div> </div>  </section>  </main> <footer class="bg-dark py-16 relative overflow-hidden"> <div class="absolute inset-0 bg-hero opacity-[.03]"></div> <div class="max-w-6xl mx-auto px-6 lg:px-12 relative"> <div class="grid grid-cols-1 md:grid-cols-4 gap-12"> <div class="md:col-span-2 flex flex-col items-center md:items-start"> <a href="/" class="flex items-center gap-2 mb-4"> <i class="fas fa-code text-green-400 text-2xl led-glow"></i> <span class="text-xl font-bold font-code text-white">Weiguang Li</span> </a> <p class="text-gray-400 text-left lg:pe-16"> Java Backend Engineer specializing in Spring Boot, distributed systems, and microservices. Passionate about open source and continuous learning. </p> <div class="flex gap-4 mt-4"> <a href="https://github.com/OiPunk" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-green-400 transition-colors"> <i class="fab fa-github text-2xl"></i> </a> </div> </div> <div class="flex flex-col"> <h3 class="text-lg font-bold font-code text-white mb-4"><i class="fas fa-link text-green-400"></i> Quick Links</h3> <ul class="space-y-3"> <li> <a href="/about" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  text-gray-400 hover:text-green-400"> <i class="fa fa-user"></i> About </a> </li><li> <a href="/projects" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  text-gray-400 hover:text-green-400"> <i class="fa fa-code"></i> Projects </a> </li><li> <a href="/services" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  text-gray-400 hover:text-green-400"> <i class="fa fa-cogs"></i> Expertise </a> </li><li> <a href="/blog" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  text-gray-400 hover:text-green-400"> <i class="fa fa-blog"></i> Blog </a> </li><li> <a href="/contact" class="group relative text-gray-300 hover:text-green-400 transition-colors font-medium  text-gray-400 hover:text-green-400"> <i class="fa fa-envelope"></i> Contact </a> </li> </ul> </div> <!-- Newsletter --> <div> <h3 class="text-xl font-bold font-code text-white mb-6 flex items-center gap-2"> <i class="fas fa-envelope text-green-400"></i> Newsletter </h3> <p class="text-gray-300 mb-4">Subscribe for the latest tech articles and project updates.</p> <form class="space-y-3"> <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 focus:outline-none focus:border-green-400 transition-colors"> <button type="submit" class="w-full px-4 py-2 bg-green-500 text-gray-900 font-bold rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-2"> <i class="fas fa-paper-plane"></i> Subscribe </button> </form> </div> </div> <!-- Copyright --> <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4"> <p class="text-gray-300 text-sm">
+© 2026 Weiguang Li. Crafted with  <i class="fas fa-heart text-green-400"></i> and  <i class="fas fa-coffee text-green-400"></i>.
+</p> <div class="flex gap-6 text-gray-300 text-sm"> <a href="/privacy" class="hover:text-green-400 transition-colors">Privacy Policy</a><a href="/terms" class="hover:text-green-400 transition-colors">Terms of Service</a> </div> </div> </div> </footer> <button id="back-to-top" class="fixed bottom-6 end-6 bg-gray-800 border border-green-600 font-bold size-10 flex items-center justify-center rounded-full opacity-0 invisible transition-all duration-300 z-50" style="display: none;" title="Back to Top"> <svg class="size-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button> <script type="module" src="/_astro/Layout.astro_astro_type_script_index_0_lang.B7yG3BKd.js"></script> </body> </html>

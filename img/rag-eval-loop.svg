@@ -1,0 +1,38 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="80" y1="100" x2="1120" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="200" y1="450" x2="1000" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ADE80"/>
+      <stop offset="1" stop-color="#60A5FA"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" rx="26" fill="url(#bg3)"/>
+  <text x="80" y="95" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">RAG Evaluation Loop</text>
+
+  <circle cx="600" cy="470" r="280" stroke="url(#ring)" stroke-width="8" stroke-dasharray="14 10"/>
+
+  <g>
+    <rect x="470" y="170" width="260" height="98" rx="14" fill="#0F172A" stroke="#1E293B"/>
+    <text x="512" y="228" fill="#A7F3D0" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Define Tasks</text>
+
+    <rect x="840" y="360" width="260" height="98" rx="14" fill="#0F172A" stroke="#1E293B"/>
+    <text x="872" y="418" fill="#A7F3D0" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Run Evals</text>
+
+    <rect x="470" y="670" width="260" height="98" rx="14" fill="#0F172A" stroke="#1E293B"/>
+    <text x="496" y="728" fill="#A7F3D0" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Fix Failures</text>
+
+    <rect x="100" y="360" width="260" height="98" rx="14" fill="#0F172A" stroke="#1E293B"/>
+    <text x="128" y="418" fill="#A7F3D0" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Ship Safely</text>
+  </g>
+
+  <path d="M735 230C820 260 885 308 938 372" stroke="#4ADE80" stroke-width="6" stroke-linecap="round"/>
+  <path d="M938 470C902 560 833 628 735 700" stroke="#60A5FA" stroke-width="6" stroke-linecap="round"/>
+  <path d="M470 700C365 660 295 600 245 510" stroke="#4ADE80" stroke-width="6" stroke-linecap="round"/>
+  <path d="M245 390C285 300 355 242 470 220" stroke="#60A5FA" stroke-width="6" stroke-linecap="round"/>
+
+  <text x="110" y="836" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="24">Treat RAG as a measurement problem: improve retrieval and prompting through repeatable feedback.</text>
+</svg>

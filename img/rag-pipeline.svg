@@ -1,0 +1,57 @@
+<svg width="1400" height="840" viewBox="0 0 1400 840" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="120" y1="100" x2="1280" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1120"/>
+      <stop offset="1" stop-color="#0E1A2B"/>
+    </linearGradient>
+    <linearGradient id="line" x1="170" y1="420" x2="1230" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ADE80"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="840" rx="24" fill="url(#bg2)"/>
+  <text x="84" y="95" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="800">RAG Lifecycle in Production</text>
+
+  <g>
+    <rect x="84" y="180" width="220" height="120" rx="14" fill="#111827" stroke="#1F2937"/>
+    <text x="110" y="232" fill="#86EFAC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">Ingest</text>
+    <text x="110" y="266" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="18">Collect + normalize</text>
+
+    <rect x="348" y="180" width="220" height="120" rx="14" fill="#111827" stroke="#1F2937"/>
+    <text x="374" y="232" fill="#86EFAC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">Chunk</text>
+    <text x="374" y="266" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="18">Semantic boundaries</text>
+
+    <rect x="612" y="180" width="220" height="120" rx="14" fill="#111827" stroke="#1F2937"/>
+    <text x="638" y="232" fill="#86EFAC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">Embed</text>
+    <text x="638" y="266" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="18">Dense vectors</text>
+
+    <rect x="876" y="180" width="220" height="120" rx="14" fill="#111827" stroke="#1F2937"/>
+    <text x="902" y="232" fill="#86EFAC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">Retrieve</text>
+    <text x="902" y="266" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="18">Hybrid + rerank</text>
+
+    <rect x="1140" y="180" width="176" height="120" rx="14" fill="#111827" stroke="#1F2937"/>
+    <text x="1164" y="232" fill="#86EFAC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">Generate</text>
+    <text x="1164" y="266" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="18">Cited answer</text>
+
+    <path d="M304 240H348M568 240H612M832 240H876M1096 240H1140" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <rect x="84" y="420" width="600" height="280" rx="16" fill="#0B1220" stroke="#1E293B"/>
+    <text x="114" y="470" fill="#F1F5F9" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Key quality controls</text>
+    <text x="114" y="520" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="23">1) Filter stale or low-trust sources</text>
+    <text x="114" y="560" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="23">2) Log retrieval traces for debugging</text>
+    <text x="114" y="600" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="23">3) Enforce citation requirements</text>
+    <text x="114" y="640" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="23">4) Evaluate before shipping prompts</text>
+  </g>
+
+  <g>
+    <rect x="728" y="420" width="588" height="280" rx="16" fill="#0B1220" stroke="#1E293B"/>
+    <text x="758" y="470" fill="#F1F5F9" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Metrics to watch</text>
+    <text x="758" y="520" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="23">- Recall@k and MRR for retriever health</text>
+    <text x="758" y="560" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="23">- Context precision and citation accuracy</text>
+    <text x="758" y="600" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="23">- Hallucination and refusal quality rate</text>
+    <text x="758" y="640" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="23">- p95 latency and cost per answer</text>
+  </g>
+</svg>
