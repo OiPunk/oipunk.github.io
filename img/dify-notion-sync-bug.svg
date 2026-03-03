@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" rx="12" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#f1f5f9" font-size="18" font-weight="700">Dify Notion Sync — Bug Flow &amp; Fix</text>
+
+  <!-- ===== BROKEN FLOW (top) ===== -->
+  <text x="30" y="80" fill="#ef4444" font-size="14" font-weight="600">BROKEN (v1.13.0)</text>
+
+  <!-- Notion -->
+  <rect x="30" y="95" width="130" height="55" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="95" y="118" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="600">Notion Page</text>
+  <text x="95" y="137" text-anchor="middle" fill="#94a3b8" font-size="11">modified</text>
+
+  <!-- Sync Task -->
+  <rect x="210" y="95" width="180" height="55" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="300" y="118" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="600">document_indexing</text>
+  <text x="300" y="137" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="600">_sync_task</text>
+
+  <!-- Dict object -->
+  <rect x="440" y="95" width="150" height="55" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="515" y="118" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="600">Python dict</text>
+  <text x="515" y="137" text-anchor="middle" fill="#94a3b8" font-size="11">data_source_info</text>
+
+  <!-- PostgreSQL -->
+  <rect x="640" y="95" width="150" height="55" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+  <text x="715" y="118" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="600">PostgreSQL</text>
+  <text x="715" y="137" text-anchor="middle" fill="#94a3b8" font-size="11">LongText column</text>
+
+  <!-- Error box -->
+  <rect x="640" y="165" width="230" height="45" rx="6" fill="#451a1a" stroke="#ef4444" stroke-width="1"/>
+  <text x="755" y="184" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="600">psycopg2.ProgrammingError</text>
+  <text x="755" y="200" text-anchor="middle" fill="#fca5a5" font-size="11">can't adapt type 'dict'</text>
+
+  <!-- Arrows broken flow -->
+  <line x1="160" y1="122" x2="205" y2="122" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="390" y1="122" x2="435" y2="122" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="590" y1="122" x2="635" y2="122" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow-red)" stroke-dasharray="6,3"/>
+  <line x1="715" y1="150" x2="715" y2="162" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+
+  <!-- X mark -->
+  <circle cx="612" cy="122" r="12" fill="#ef4444" opacity="0.9"/>
+  <text x="612" y="127" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">X</text>
+
+  <!-- ===== FIXED FLOW (bottom) ===== -->
+  <text x="30" y="260" fill="#22c55e" font-size="14" font-weight="600">FIXED (PR #32747)</text>
+
+  <!-- Notion -->
+  <rect x="30" y="275" width="130" height="55" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="95" y="298" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="600">Notion Page</text>
+  <text x="95" y="317" text-anchor="middle" fill="#94a3b8" font-size="11">modified</text>
+
+  <!-- Sync Task -->
+  <rect x="210" y="275" width="180" height="55" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="300" y="298" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="600">document_indexing</text>
+  <text x="300" y="317" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="600">_sync_task</text>
+
+  <!-- json.dumps -->
+  <rect x="440" y="275" width="150" height="55" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="515" y="298" text-anchor="middle" fill="#86efac" font-size="13" font-weight="700">json.dumps()</text>
+  <text x="515" y="317" text-anchor="middle" fill="#86efac" font-size="11">dict → string</text>
+
+  <!-- JSON string -->
+  <rect x="640" y="275" width="150" height="55" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="715" y="298" text-anchor="middle" fill="#f8fafc" font-size="13" font-weight="600">PostgreSQL</text>
+  <text x="715" y="317" text-anchor="middle" fill="#86efac" font-size="11">JSON string ✓</text>
+
+  <!-- Arrows fixed flow -->
+  <line x1="160" y1="302" x2="205" y2="302" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="390" y1="302" x2="435" y2="302" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="590" y1="302" x2="635" y2="302" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+  <!-- Check mark -->
+  <circle cx="612" cy="302" r="12" fill="#22c55e" opacity="0.9"/>
+  <text x="612" y="307" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">✓</text>
+
+  <!-- ===== MASKING FIXTURE (bottom section) ===== -->
+  <text x="30" y="390" fill="#f59e0b" font-size="14" font-weight="600">WHY TESTS DIDN'T CATCH IT</text>
+
+  <!-- Test fixture box -->
+  <rect x="30" y="405" width="400" height="95" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="230" y="430" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="600">@pytest.fixture(autouse=True)</text>
+  <text x="230" y="450" text-anchor="middle" fill="#94a3b8" font-size="12">register_adapter(dict, Json)</text>
+  <text x="230" y="475" text-anchor="middle" fill="#94a3b8" font-size="11">↑ Globally adapted dict → Json</text>
+  <text x="230" y="492" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="600">Tests passed, but production code was broken!</text>
+
+  <!-- Fix action -->
+  <rect x="480" y="405" width="390" height="95" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="675" y="430" text-anchor="middle" fill="#86efac" font-size="12" font-weight="600">Fix: 3 Changes in PR #32747</text>
+  <text x="675" y="455" text-anchor="middle" fill="#d1fae5" font-size="12">1. json.dumps() — serialize before DB write</text>
+  <text x="675" y="475" text-anchor="middle" fill="#d1fae5" font-size="12">2. Remove masking autouse fixture</text>
+  <text x="675" y="495" text-anchor="middle" fill="#d1fae5" font-size="12">3. Add regression test asserting string type</text>
+
+  <!-- Arrow from fixture to fix -->
+  <line x1="430" y1="452" x2="475" y2="452" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+</svg>
