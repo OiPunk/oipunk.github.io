@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 380" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#64748b"/></marker>
+    <marker id="a2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ef4444"/></marker>
+    <marker id="a3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#22c55e"/></marker>
+  </defs>
+  <rect width="850" height="380" rx="12" fill="#0f172a"/>
+  <text x="425" y="35" text-anchor="middle" fill="#f1f5f9" font-size="17" font-weight="700">Agent-as-Tool RunConfig Inheritance (openai-agents #2463)</text>
+
+  <!-- BROKEN -->
+  <text x="30" y="70" fill="#ef4444" font-size="13" font-weight="600">BROKEN: child agent loses parent RunConfig</text>
+  <rect x="30" y="85" width="160" height="60" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="110" y="108" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="600">Parent Agent</text>
+  <text x="110" y="127" text-anchor="middle" fill="#86efac" font-size="10">RunConfig ✓</text>
+
+  <rect x="240" y="85" width="160" height="60" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="320" y="108" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="600">ToolContext</text>
+  <text x="320" y="127" text-anchor="middle" fill="#fca5a5" font-size="10">no run_config field</text>
+
+  <rect x="450" y="85" width="170" height="60" rx="8" fill="#451a1a" stroke="#ef4444" stroke-width="2"/>
+  <text x="535" y="108" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="600">Child Agent (tool)</text>
+  <text x="535" y="127" text-anchor="middle" fill="#fca5a5" font-size="10">RunConfig = default ✗</text>
+
+  <rect x="670" y="85" width="150" height="60" rx="8" fill="#451a1a" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="745" y="108" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="600">tracing config lost</text>
+  <text x="745" y="127" text-anchor="middle" fill="#fca5a5" font-size="11">model_provider lost</text>
+
+  <line x1="190" y1="115" x2="235" y2="115" stroke="#64748b" stroke-width="1.5" marker-end="url(#a1)"/>
+  <line x1="400" y1="115" x2="445" y2="115" stroke="#ef4444" stroke-width="2" marker-end="url(#a2)" stroke-dasharray="6,3"/>
+  <line x1="620" y1="115" x2="665" y2="115" stroke="#ef4444" stroke-width="1.5" marker-end="url(#a2)"/>
+
+  <!-- FIXED -->
+  <text x="30" y="200" fill="#22c55e" font-size="13" font-weight="600">FIXED: RunConfig propagates through ToolContext</text>
+  <rect x="30" y="215" width="160" height="60" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="110" y="238" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="600">Parent Agent</text>
+  <text x="110" y="257" text-anchor="middle" fill="#86efac" font-size="10">RunConfig ✓</text>
+
+  <rect x="240" y="215" width="160" height="60" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="320" y="238" text-anchor="middle" fill="#86efac" font-size="12" font-weight="700">ToolContext</text>
+  <text x="320" y="257" text-anchor="middle" fill="#86efac" font-size="10">run_config inherited ✓</text>
+
+  <rect x="450" y="215" width="170" height="60" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="535" y="238" text-anchor="middle" fill="#86efac" font-size="12" font-weight="600">Child Agent (tool)</text>
+  <text x="535" y="257" text-anchor="middle" fill="#86efac" font-size="10">RunConfig = parent's ✓</text>
+
+  <rect x="670" y="215" width="150" height="60" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="745" y="238" text-anchor="middle" fill="#d1fae5" font-size="11" font-weight="600">tracing ✓</text>
+  <text x="745" y="257" text-anchor="middle" fill="#d1fae5" font-size="11">model_provider ✓</text>
+
+  <line x1="190" y1="245" x2="235" y2="245" stroke="#22c55e" stroke-width="1.5" marker-end="url(#a3)"/>
+  <line x1="400" y1="245" x2="445" y2="245" stroke="#22c55e" stroke-width="1.5" marker-end="url(#a3)"/>
+  <line x1="620" y1="245" x2="665" y2="245" stroke="#22c55e" stroke-width="1.5" marker-end="url(#a3)"/>
+
+  <rect x="30" y="310" width="790" height="55" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="425" y="333" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="600">Key Changes</text>
+  <text x="425" y="353" text-anchor="middle" fill="#94a3b8" font-size="11">ToolContext + run_config field → tool_execution passes config → Agent.as_tool() inherits from parent context</text>
+</svg>
