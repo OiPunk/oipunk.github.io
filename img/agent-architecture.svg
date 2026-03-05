@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 560" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#64748b"/></marker>
+    <marker id="ar-b" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/></marker>
+    <marker id="ar-g" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#22c55e"/></marker>
+    <marker id="ar-p" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a855f7"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f172a"/><stop offset="100%" stop-color="#1e1b4b"/></linearGradient>
+  </defs>
+  <rect width="920" height="560" rx="12" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="460" y="38" text-anchor="middle" fill="#f1f5f9" font-size="20" font-weight="700">AI Agent Core Architecture</text>
+  <text x="460" y="58" text-anchor="middle" fill="#94a3b8" font-size="12">Perception → Reasoning → Action → Observation Loop</text>
+
+  <!-- === CENTER: LLM Brain === -->
+  <rect x="330" y="200" width="260" height="100" rx="16" fill="#1e293b" stroke="#3b82f6" stroke-width="2.5"/>
+  <text x="460" y="235" text-anchor="middle" fill="#60a5fa" font-size="18" font-weight="700">LLM (Brain)</text>
+  <text x="460" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">GPT-4 / Claude / Gemini / Llama</text>
+  <text x="460" y="278" text-anchor="middle" fill="#94a3b8" font-size="11">Reasoning · Planning · Decision Making</text>
+
+  <!-- === TOP: User Input === -->
+  <rect x="360" y="80" width="200" height="50" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="460" y="102" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="600">User Input / Task</text>
+  <text x="460" y="120" text-anchor="middle" fill="#94a3b8" font-size="10">"Help me analyze this dataset"</text>
+  <line x1="460" y1="130" x2="460" y2="195" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- === LEFT: Memory === -->
+  <rect x="30" y="140" width="240" height="120" rx="12" fill="#1e293b" stroke="#a855f7" stroke-width="2"/>
+  <text x="150" y="168" text-anchor="middle" fill="#c084fc" font-size="15" font-weight="700">Memory</text>
+  <text x="150" y="192" text-anchor="middle" fill="#d8b4fe" font-size="11">Short-term: conversation context</text>
+  <text x="150" y="210" text-anchor="middle" fill="#d8b4fe" font-size="11">Long-term: vector store / RAG</text>
+  <text x="150" y="228" text-anchor="middle" fill="#d8b4fe" font-size="11">Episodic: past task experiences</text>
+  <text x="150" y="248" text-anchor="middle" fill="#94a3b8" font-size="10">Redis · Pinecone · ChromaDB · Mem0</text>
+  <line x1="270" y1="220" x2="325" y2="245" stroke="#a855f7" stroke-width="1.5" marker-end="url(#ar-p)"/>
+  <line x1="325" y1="235" x2="270" y2="210" stroke="#a855f7" stroke-width="1.5" marker-end="url(#ar-p)"/>
+
+  <!-- === RIGHT: Tools === -->
+  <rect x="650" y="120" width="240" height="160" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+  <text x="770" y="148" text-anchor="middle" fill="#86efac" font-size="15" font-weight="700">Tools (MCP / Function Calling)</text>
+  <rect x="665" y="158" width="100" height="28" rx="5" fill="#14532d"/>
+  <text x="715" y="177" text-anchor="middle" fill="#86efac" font-size="10">Code Exec</text>
+  <rect x="775" y="158" width="100" height="28" rx="5" fill="#14532d"/>
+  <text x="825" y="177" text-anchor="middle" fill="#86efac" font-size="10">Web Search</text>
+  <rect x="665" y="194" width="100" height="28" rx="5" fill="#14532d"/>
+  <text x="715" y="213" text-anchor="middle" fill="#86efac" font-size="10">Database</text>
+  <rect x="775" y="194" width="100" height="28" rx="5" fill="#14532d"/>
+  <text x="825" y="213" text-anchor="middle" fill="#86efac" font-size="10">API Calls</text>
+  <rect x="665" y="230" width="100" height="28" rx="5" fill="#14532d"/>
+  <text x="715" y="249" text-anchor="middle" fill="#86efac" font-size="10">File I/O</text>
+  <rect x="775" y="230" width="100" height="28" rx="5" fill="#14532d"/>
+  <text x="825" y="249" text-anchor="middle" fill="#86efac" font-size="10">Browser</text>
+  <line x1="590" y1="240" x2="645" y2="220" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ar-g)"/>
+  <line x1="645" y1="210" x2="590" y2="250" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ar-g)"/>
+
+  <!-- === BOTTOM: Planning === -->
+  <rect x="180" y="370" width="220" height="90" rx="12" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+  <text x="290" y="398" text-anchor="middle" fill="#fb923c" font-size="15" font-weight="700">Planning</text>
+  <text x="290" y="418" text-anchor="middle" fill="#fdba74" font-size="11">Task Decomposition</text>
+  <text x="290" y="436" text-anchor="middle" fill="#fdba74" font-size="11">ReAct / Chain-of-Thought</text>
+  <text x="290" y="454" text-anchor="middle" fill="#94a3b8" font-size="10">LangGraph · CrewAI · AutoGen</text>
+  <line x1="390" y1="300" x2="340" y2="365" stroke="#f97316" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="330" y1="365" x2="400" y2="300" stroke="#f97316" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- === BOTTOM RIGHT: Observation === -->
+  <rect x="520" y="370" width="220" height="90" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+  <text x="630" y="398" text-anchor="middle" fill="#67e8f9" font-size="15" font-weight="700">Observation</text>
+  <text x="630" y="418" text-anchor="middle" fill="#a5f3fc" font-size="11">Tool execution results</text>
+  <text x="630" y="436" text-anchor="middle" fill="#a5f3fc" font-size="11">Environment feedback</text>
+  <text x="630" y="454" text-anchor="middle" fill="#94a3b8" font-size="10">Self-reflection · Error recovery</text>
+  <line x1="530" y1="300" x2="580" y2="365" stroke="#06b6d4" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="590" y1="365" x2="520" y2="300" stroke="#06b6d4" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- === Loop arrow === -->
+  <path d="M400 415 Q460 500 520 415" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#ar)"/>
+  <text x="460" y="495" text-anchor="middle" fill="#64748b" font-size="11">Iterative Loop</text>
+
+  <!-- === Bottom legend === -->
+  <rect x="30" y="520" width="860" height="28" rx="6" fill="#1e293b"/>
+  <text x="460" y="539" text-anchor="middle" fill="#94a3b8" font-size="11">Agent = LLM + Memory + Tools + Planning + Observation | The loop continues until the task is complete or max iterations reached</text>
+</svg>

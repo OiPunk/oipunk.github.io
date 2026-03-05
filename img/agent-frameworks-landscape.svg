@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 620" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f172a"/><stop offset="100%" stop-color="#1a1a2e"/></linearGradient>
+  </defs>
+  <rect width="920" height="620" rx="12" fill="url(#bg2)"/>
+
+  <text x="460" y="38" text-anchor="middle" fill="#f1f5f9" font-size="20" font-weight="700">AI Agent Framework Landscape 2026</text>
+  <text x="460" y="58" text-anchor="middle" fill="#94a3b8" font-size="12">From low-level SDKs to high-level orchestration platforms</text>
+
+  <!-- Y-axis label -->
+  <text x="18" y="340" text-anchor="middle" fill="#64748b" font-size="11" transform="rotate(-90,18,340)">Abstraction Level</text>
+  <text x="460" y="605" text-anchor="middle" fill="#64748b" font-size="11">Flexibility →</text>
+
+  <!-- Layer 1: LLM Providers -->
+  <rect x="50" y="490" width="830" height="80" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1" opacity="0.7"/>
+  <text x="90" y="515" fill="#94a3b8" font-size="12" font-weight="600">LLM Providers</text>
+
+  <rect x="70" y="525" width="100" height="32" rx="6" fill="#0e4429" stroke="#22c55e" stroke-width="1"/>
+  <text x="120" y="546" text-anchor="middle" fill="#86efac" font-size="11" font-weight="600">OpenAI</text>
+  <rect x="185" y="525" width="100" height="32" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+  <text x="235" y="546" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="600">Anthropic</text>
+  <rect x="300" y="525" width="100" height="32" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+  <text x="350" y="546" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="600">Google</text>
+  <rect x="415" y="525" width="100" height="32" rx="6" fill="#431407" stroke="#f97316" stroke-width="1"/>
+  <text x="465" y="546" text-anchor="middle" fill="#fdba74" font-size="11" font-weight="600">Meta Llama</text>
+  <rect x="530" y="525" width="100" height="32" rx="6" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
+  <text x="580" y="546" text-anchor="middle" fill="#d8b4fe" font-size="11" font-weight="600">DeepSeek</text>
+  <rect x="645" y="525" width="100" height="32" rx="6" fill="#1c1917" stroke="#78716c" stroke-width="1"/>
+  <text x="695" y="546" text-anchor="middle" fill="#d6d3d1" font-size="11" font-weight="600">Qwen</text>
+  <rect x="760" y="525" width="100" height="32" rx="6" fill="#1a1a1a" stroke="#64748b" stroke-width="1"/>
+  <text x="810" y="546" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Mistral</text>
+
+  <!-- Layer 2: Unified API / Protocol -->
+  <rect x="50" y="385" width="830" height="85" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1" opacity="0.7"/>
+  <text x="90" y="410" fill="#94a3b8" font-size="12" font-weight="600">Unified API &amp; Protocol Layer</text>
+
+  <rect x="70" y="420" width="130" height="38" rx="8" fill="#172554" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="135" y="437" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="600">LiteLLM</text>
+  <text x="135" y="452" text-anchor="middle" fill="#64748b" font-size="9">Proxy · 100+ models</text>
+
+  <rect x="220" y="420" width="130" height="38" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="285" y="437" text-anchor="middle" fill="#86efac" font-size="12" font-weight="600">MCP</text>
+  <text x="285" y="452" text-anchor="middle" fill="#64748b" font-size="9">Tool Protocol · Anthropic</text>
+
+  <rect x="370" y="420" width="170" height="38" rx="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="455" y="437" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="600">Function Calling</text>
+  <text x="455" y="452" text-anchor="middle" fill="#64748b" font-size="9">OpenAI / Claude native</text>
+
+  <rect x="560" y="420" width="140" height="38" rx="8" fill="#431407" stroke="#f97316" stroke-width="1.5"/>
+  <text x="630" y="437" text-anchor="middle" fill="#fdba74" font-size="12" font-weight="600">A2A Protocol</text>
+  <text x="630" y="452" text-anchor="middle" fill="#64748b" font-size="9">Agent-to-Agent · Google</text>
+
+  <rect x="720" y="420" width="140" height="38" rx="8" fill="#3b0764" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="790" y="437" text-anchor="middle" fill="#d8b4fe" font-size="12" font-weight="600">AG-UI Protocol</text>
+  <text x="790" y="452" text-anchor="middle" fill="#64748b" font-size="9">Agent-to-UI · CopilotKit</text>
+
+  <!-- Layer 3: Core Frameworks -->
+  <rect x="50" y="250" width="830" height="115" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1" opacity="0.7"/>
+  <text x="90" y="275" fill="#94a3b8" font-size="12" font-weight="600">Core Agent Frameworks (Code-First)</text>
+
+  <rect x="70" y="288" width="130" height="60" rx="8" fill="#172554" stroke="#3b82f6" stroke-width="2"/>
+  <text x="135" y="310" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="700">LangGraph</text>
+  <text x="135" y="326" text-anchor="middle" fill="#64748b" font-size="9">Stateful graph</text>
+  <text x="135" y="340" text-anchor="middle" fill="#64748b" font-size="9">Cycles · Persistence</text>
+
+  <rect x="220" y="288" width="130" height="60" rx="8" fill="#0e4429" stroke="#22c55e" stroke-width="2"/>
+  <text x="285" y="310" text-anchor="middle" fill="#86efac" font-size="13" font-weight="700">OpenAI Agents</text>
+  <text x="285" y="326" text-anchor="middle" fill="#64748b" font-size="9">Official SDK</text>
+  <text x="285" y="340" text-anchor="middle" fill="#64748b" font-size="9">Handoffs · Guardrails</text>
+
+  <rect x="370" y="288" width="130" height="60" rx="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="2"/>
+  <text x="435" y="310" text-anchor="middle" fill="#a5b4fc" font-size="13" font-weight="700">PydanticAI</text>
+  <text x="435" y="326" text-anchor="middle" fill="#64748b" font-size="9">Type-safe agents</text>
+  <text x="435" y="340" text-anchor="middle" fill="#64748b" font-size="9">Structured output</text>
+
+  <rect x="520" y="288" width="130" height="60" rx="8" fill="#431407" stroke="#f97316" stroke-width="2"/>
+  <text x="585" y="310" text-anchor="middle" fill="#fdba74" font-size="13" font-weight="700">CrewAI</text>
+  <text x="585" y="326" text-anchor="middle" fill="#64748b" font-size="9">Role-based agents</text>
+  <text x="585" y="340" text-anchor="middle" fill="#64748b" font-size="9">Collaboration</text>
+
+  <rect x="670" y="288" width="100" height="60" rx="8" fill="#3b0764" stroke="#a855f7" stroke-width="2"/>
+  <text x="720" y="310" text-anchor="middle" fill="#d8b4fe" font-size="13" font-weight="700">AutoGen</text>
+  <text x="720" y="326" text-anchor="middle" fill="#64748b" font-size="9">Multi-agent</text>
+  <text x="720" y="340" text-anchor="middle" fill="#64748b" font-size="9">Conversation</text>
+
+  <rect x="790" y="288" width="75" height="60" rx="8" fill="#164e63" stroke="#06b6d4" stroke-width="2"/>
+  <text x="828" y="310" text-anchor="middle" fill="#67e8f9" font-size="13" font-weight="700">ADK</text>
+  <text x="828" y="326" text-anchor="middle" fill="#64748b" font-size="9">Google</text>
+  <text x="828" y="340" text-anchor="middle" fill="#64748b" font-size="9">Agent Kit</text>
+
+  <!-- Layer 4: High-Level Platforms -->
+  <rect x="50" y="80" width="830" height="150" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1" opacity="0.7"/>
+  <text x="90" y="105" fill="#94a3b8" font-size="12" font-weight="600">High-Level Platforms (Low-Code / No-Code)</text>
+
+  <rect x="70" y="118" width="150" height="95" rx="10" fill="#172554" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="145" y="142" text-anchor="middle" fill="#93c5fd" font-size="14" font-weight="700">Dify</text>
+  <text x="145" y="160" text-anchor="middle" fill="#64748b" font-size="10">Visual workflow</text>
+  <text x="145" y="175" text-anchor="middle" fill="#64748b" font-size="10">RAG pipeline</text>
+  <text x="145" y="190" text-anchor="middle" fill="#64748b" font-size="10">Plugin ecosystem</text>
+  <text x="145" y="206" text-anchor="middle" fill="#475569" font-size="9">Self-hosted · Cloud</text>
+
+  <rect x="240" y="118" width="150" height="95" rx="10" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="315" y="142" text-anchor="middle" fill="#86efac" font-size="14" font-weight="700">Coze</text>
+  <text x="315" y="160" text-anchor="middle" fill="#64748b" font-size="10">ByteDance platform</text>
+  <text x="315" y="175" text-anchor="middle" fill="#64748b" font-size="10">Bot building</text>
+  <text x="315" y="190" text-anchor="middle" fill="#64748b" font-size="10">Multi-channel deploy</text>
+  <text x="315" y="206" text-anchor="middle" fill="#475569" font-size="9">Cloud only</text>
+
+  <rect x="410" y="118" width="150" height="95" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="485" y="142" text-anchor="middle" fill="#a5b4fc" font-size="14" font-weight="700">n8n / Zapier</text>
+  <text x="485" y="160" text-anchor="middle" fill="#64748b" font-size="10">Workflow automation</text>
+  <text x="485" y="175" text-anchor="middle" fill="#64748b" font-size="10">AI node integration</text>
+  <text x="485" y="190" text-anchor="middle" fill="#64748b" font-size="10">1000+ integrations</text>
+  <text x="485" y="206" text-anchor="middle" fill="#475569" font-size="9">Self-hosted · Cloud</text>
+
+  <rect x="580" y="118" width="150" height="95" rx="10" fill="#431407" stroke="#f97316" stroke-width="1.5"/>
+  <text x="655" y="142" text-anchor="middle" fill="#fdba74" font-size="14" font-weight="700">FlowiseAI</text>
+  <text x="655" y="160" text-anchor="middle" fill="#64748b" font-size="10">Drag &amp; drop LLM</text>
+  <text x="655" y="175" text-anchor="middle" fill="#64748b" font-size="10">LangChain visual</text>
+  <text x="655" y="190" text-anchor="middle" fill="#64748b" font-size="10">Chatflow builder</text>
+  <text x="655" y="206" text-anchor="middle" fill="#475569" font-size="9">Self-hosted</text>
+
+  <rect x="750" y="118" width="115" height="95" rx="10" fill="#3b0764" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="808" y="142" text-anchor="middle" fill="#d8b4fe" font-size="14" font-weight="700">Langflow</text>
+  <text x="808" y="160" text-anchor="middle" fill="#64748b" font-size="10">Visual IDE</text>
+  <text x="808" y="175" text-anchor="middle" fill="#64748b" font-size="10">LangChain-based</text>
+  <text x="808" y="190" text-anchor="middle" fill="#64748b" font-size="10">Code export</text>
+  <text x="808" y="206" text-anchor="middle" fill="#475569" font-size="9">DataStax</text>
+</svg>
